@@ -1,6 +1,6 @@
 import { CreateDialog } from "@/API/Dialog/CreateDialog";
 import { SendDialogAudio } from "@/API/Dialog/SendDialogAudio";
-import { Check, Pause, Pencil, Play } from "lucide-react";
+import { Check, Pencil } from "lucide-react";
 import { FC, useEffect, useRef, useState } from "react";
 import { useSession } from "next-auth/react";
 
@@ -27,11 +27,16 @@ const Chat: FC<{}> = () => {
   useEffect(() => {
     const getAudioDevices = async () => {
       try {
+        // Запрашиваем разрешение на доступ к микрофонам
+        await navigator.mediaDevices.getUserMedia({ audio: true });
+
+        // Если разрешение предоставлено, получаем список аудиоустройств
         const devices = await navigator.mediaDevices.enumerateDevices();
         const audioInputDevices = devices.filter(device => device.kind === "audioinput");
         setAudioDevices(audioInputDevices);
       } catch (err) {
         console.error("Error accessing audio devices:", err);
+        setError("Ошибка доступа к аудиоустройствам. Пожалуйста, предоставьте доступ к микрофонам.");
       }
     };
 
@@ -71,6 +76,7 @@ const Chat: FC<{}> = () => {
       mediaRecorder2.current.start();
     } catch (error) {
       console.error("Error starting recording:", error);
+      setError("Ошибка при начале записи. Пожалуйста, убедитесь, что у вас есть необходимые разрешения.");
       setRecording(false);
     }
   };
@@ -101,21 +107,20 @@ const Chat: FC<{}> = () => {
 
   const handleSend = async () => {
     if (title === "Совещание без имени") {
-      setError("Введите названия совещания !!!");
+      setError("Введите название совещания.");
     } else if (!name1) {
-      setError("Введите имя участника 1 !!!");
+      setError("Введите имя участника 1.");
     } else if (!name2) {
-      setError("Введите имя участника 2 !!!");
+      setError("Введите имя участника 2.");
     } else if (!audioURL1 || !audioURL2) {
-      setError("No audio files to send");
+      setError("Нет аудиофайлов для отправки.");
     } else {
       try {
         const iddialog = await CreateDialog(title, session?.user.access_token);
-        console.log(iddialog);
         const data = await SendDialogAudio(iddialog?.id, name1, name2, audioURL1, audioURL2);
         console.log(data);
       } catch (error) {
-        setError("Error sending audio");
+        setError("Ошибка при отправке аудио.");
       }
     }
   };
