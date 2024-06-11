@@ -1,6 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
+	reactStrictMode: true,
+	env: {
+        NEXTAUTH_URL: "https://1a73-198-45-119-218.ngrok-free.app",
+	},        
+	
 };
 
-export default nextConfig;
+module.exports = nextConfig;
