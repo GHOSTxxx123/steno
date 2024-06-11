@@ -78,8 +78,10 @@ export default function Home() {
             </div>
           </nav>
       
-        {/* <div className="md:grid md:grid-rows-3 md:grid-cols-8 md:gap-4 h-full">
-          <div className="md:row-span-3 md:col-span-3  md:row-start-2 w-1/2 bg-white  ml-5 shadow-2xl rounded-md mb-40 transition-transform -translate-x-full md:translate-x-0 ">
+      <div className="flex gap-4">
+
+        <div className="sticky bg-white shadow-2xl md:ml-5 rounded-md top-24   w-[20rem] mt-10  max-md:hidden">
+          <div className="  ">
       
       
             <ul className="space-y-2 pl-2 pr-1 mt-3 mb-3 ">
@@ -194,17 +196,29 @@ export default function Home() {
       
           </div>
 
-          <Hello />
+          {/* <Hello /> */}
 
-          </div> */}
+          </div>
           
+
           <div
-            className="flex  items-center justify-center"
+            className="flex  items-center justify-center max-w-screen w-full h-auto"
           >
 
             <Hello></Hello>
 
           </div>
+
+          {/* <div className="flex justify-center items-center max-w-sm w-full mx-auto">
+                   <div className="w-full text-center">
+                     <p className="text-4xl mt-28 pb-10 font-bold text-lime-600" >Извините нечего не найдено</p>
+                   </div>
+                 </div> */}
+
+        
+        </div>
+
+          
 
         </>
       );

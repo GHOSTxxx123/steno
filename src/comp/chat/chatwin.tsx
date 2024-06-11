@@ -122,7 +122,7 @@ const Chat: FC<{}> = () => {
 
   return (
     <>
-      <div className="row-start-1 row-end-4 col-span-5 mt-10 mb-5 mr-10 rounded-md w-2/3 h-auto hover:shadow-2xl hover:shadow-purple-300 bg-white duration-300">
+      <div className=" mt-10 mb-5 ml-1 mr-1 rounded-md md:w-3/4 h-auto hover:shadow-2xl hover:shadow-purple-300 bg-white duration-300">
         <div className="flex flex-col pt-5 mt-3 mb-20">
           {error && (
             <div className='bg-red-500 flex justify-center items-center ml-5 mr-5 text-white text-md py-1 px-3 rounded-md mt-5 mb-5'>
@@ -157,7 +157,7 @@ const Chat: FC<{}> = () => {
           </div>
 
           <div className="flex flex-col items-center pt-10">
-            <div className="flex flex-col bg-gray-200 rounded-md hover:shadow-lg hover:shadow-purple-300 w-3/4 h-56 mb-10 duration-300">
+            <div className="flex flex-col bg-gray-200 rounded-md hover:shadow-lg hover:shadow-purple-300 w-5/6 h-56 mb-10 duration-300">
               <div className="mt-3 ml-5 mr-5">
                 <label className="block">
                   <span className="block text-sm font-medium text-slate-700 mb-1">
@@ -198,7 +198,7 @@ const Chat: FC<{}> = () => {
                 </div>
               </div>
             </div>
-            <div className="flex flex-col bg-gray-200 rounded-md hover:shadow-lg hover:shadow-purple-300 w-3/4 h-56 mb-10 duration-300">
+            <div className="flex flex-col bg-gray-200 rounded-md hover:shadow-lg hover:shadow-purple-300 w-5/6 h-56 mb-10 duration-300">
               <div className="mt-3 ml-5 mr-5">
                 <label className="block">
                   <span className="block text-sm font-medium text-slate-700 mb-1">

@@ -31,7 +31,7 @@ export const ChatContact: FC<{}> = () => {
   
     return (
         <>
-            <div className="row-start-1 row-end-4 col-span-5 mt-10 mb-10 mr-10 rounded-md w-2/3  hover:shadow-2xl hover:shadow-purple-300 bg-white duration-300">
+            <div className="mt-10 mb-10  rounded-md w-2/3  hover:shadow-2xl hover:shadow-purple-300 bg-white duration-300">
                 <div
                     className="flex justify-center mt-10 mb-5"
                 >

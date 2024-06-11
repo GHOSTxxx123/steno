@@ -95,8 +95,9 @@ export default function Home() {
             </div>
           </nav>
       
-        <div className="md:grid md:grid-rows-3 md:grid-cols-8 md:gap-4 h-full">
-          <div className="md:row-span-3 md:col-span-3  md:row-start-2 w-1/2 bg-white  ml-5 shadow-2xl rounded-md mb-40 transition-transform -translate-x-full md:translate-x-0 ">
+      <div className="md:flex  md:gap-4">
+        <div className="sticky mb-10 bg-white hover:shadow-2xl h-[30rem] hover:shadow-purple-300 duration-300 md:ml-5 rounded-md top-24   md:w-[20rem] mt-10 max-md:hidden ">
+          <div className="">
       
       
             <ul className="space-y-2 pl-2 pr-1 mt-3 mb-3 ">
@@ -208,11 +209,21 @@ export default function Home() {
               </li>
             </ul>
           </ul>
-      
-          </div>
 
-              {handleWindow()}
+
+            </div>
+            </div>
+
+          <div
+            className="flex items-center justify-center max-w-screen w-full h-auto"
+          >
+
+            {handleWindow()}
+
           </div>
+        </div>
+      
+          
         </>
       );
     }
