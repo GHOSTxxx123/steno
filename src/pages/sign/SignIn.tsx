@@ -44,7 +44,7 @@ const SignIn: FC<{}> = () => {
             if (!log?.ok) {
                 setError(log?.error ?? "Произошла ошибка при входе в систему !!!");
             } else {
-                Router.back();
+              Router.replace("/hello");
             }
         } 
     }
