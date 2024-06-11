@@ -98,10 +98,11 @@ export const Dialog: FC<DialogProps> = ({ id }) => {
                         <span className="text-sm font-semibold text-gray-900 dark:text-white">{data.name}</span>
                         <span className="text-sm font-normal text-gray-500 dark:text-gray-400">{new Date(data.time_from * 1000).toISOString().substr(11, 8)}</span>
                       </div>
+                      <p className="text-sm font-normal py-2.5 text-gray-900 dark:text-white">{data.text ? (data.text) : <p className="text-gray-500">No dialog text available</p>}</p>
                       <div id={`audioControlsUser${index + 1}`} className="mt-2 audio-all">
                         <audio src={data.path} controls></audio>
                       </div>
-                      <p className="text-sm font-normal py-2.5 text-gray-900 dark:text-white">{data.text}</p>
+                      
                       <span className="text-sm font-normal text-gray-500 dark:text-gray-400">Редактировать</span>
                     </div>
                   </>
@@ -112,10 +113,11 @@ export const Dialog: FC<DialogProps> = ({ id }) => {
                         <span className="text-sm font-semibold text-gray-900 dark:text-white">{data.name}</span>
                         <span className="text-sm font-normal text-gray-500 dark:text-gray-400">{new Date(data.time_from * 1000).toISOString().substr(11, 8)}</span>
                       </div>
+                      <p className="text-sm font-normal py-2.5 text-gray-900 dark:text-white">{data.text ? (data.text) : <p className="text-gray-500">No dialog data available</p>}</p>
                       <div id={`audioControlsUser${index + 1}`} className="mt-2 audio-all">
                         <audio src={data.path} controls></audio>
                       </div>
-                      <p className="text-sm font-normal py-2.5 text-gray-900 dark:text-white">{data.text}</p>
+                      
                       <span className="text-sm font-normal text-gray-500 dark:text-gray-400">Редактировать</span>
                     </div>
                     <img className="w-8 h-8 rounded-full" src="https://avatars.mds.yandex.net/i?id=a2329e84a9449ce5eee11e22ac2bc91e11576381-8607024-images-thumbs&ref=rim&n=33&w=300&h=300" alt="User avatar" />
