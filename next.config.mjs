@@ -4,10 +4,7 @@ const nextConfig = {
   env: {
     NEXTAUTH_URL: "http://10.0.1.23:8898",
     },
-    devServer: {
-      https: true,
-    }, 
-    
+     
 };
 
 export default nextConfig;
